@@ -22,3 +22,6 @@ The US Census functions are designed to help with bulk download of multi-geograp
 
 The ```concatCensusGroup``` allows you to grab all variables from a specified group (the census terminology for dataset).  Groups are given ID's like B24022 (which corresponds with a specific concept, in this example, Sex by Occupation among workers over 16 years old).  ```concatCensusVars``` on the other hand allows you to grab specific variables from the dataset that you can specify via input in comma separated fashion when prompted.
 
+## See Also
+
+Check out the vignette.R file in the vignettes folder for a more complete look at how each of the Census and FRED api functions built here are used.
