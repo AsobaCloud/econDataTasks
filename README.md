@@ -14,7 +14,7 @@ Request an API key from census.gov to access the census API (https://api.census.
   
 Next, get your FRED API key to access Federal Research Economic Data API calls (https://fred.stlouisfed.org/docs/api/api_key.html).  Once you have your key, add FRED_KEY = <your key> to your .Renviron
   
-Also recommended to load the fips.Rdata set, which contains a vector of fips
+Also recommended to load the fips.Rdata set, which contains a vector of fips state codes, for easy reference
   
 ## Core functions
 
