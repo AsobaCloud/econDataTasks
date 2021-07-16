@@ -5,6 +5,15 @@ library(econDataTasks)
 library(data.table)
 library(googleCloudStorageR)
 
+# View list of all available Census API endpoints
+apis <- listCensusApis()
+View(apis)
+
+# View fields in a selected Census API endpoint
+getCensusInfo(name="zbp",year=2018)
+info <- getCensusInfo(name="zbp",year=2018)
+View(info[[2]])
+
 
 # Search for a FRED dataset based on keyword
 searchFred(key="UMICH")
@@ -15,10 +24,12 @@ searchFred(key="UMICH")
 getFred(d_id="UMCSENT",fred_df = "UMICH_Consumer_Sentiment")
 getFred(d_id="MICH",fred_df = "UMICH_Inflation_Expectation")
 
-## Find and download Marin County datasets
+## Find and download Marin County datasets from FRED
 searchFred(key="Marin County")
 
 getFred(d_id="CAMARI5URN",fred_df = "Marin_County_Monthly_Unemployment")
+
+## Download historical acs/acs5 dataset for Marin County
 concatCensusGroup(start_year=2010,end_year=2019,tablename="Marin_County_Households",group="B19080",fipstate='06')
 
 # Save datasets to csv
@@ -48,8 +59,13 @@ for (i in files){
   gcs_upload(file=i, name=paste("econData/",filename), predefinedAcl = "bucketLevel")
 }
 
-
-
 googleCloudStorageR::gcs_upload()
+
+# See basic CensusAPI functions
+
+https://www.hrecht.com/censusapi/articles/getting-started.html
+
+
+
 ## sources
 # https://www.chicagofed.org/publications/nfci/index
