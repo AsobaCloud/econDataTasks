@@ -8,8 +8,7 @@ LazyData: true
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 StagedInstall: no
-Depends: R (>= 4.0.0),censusapi,plyr,dplyr,tidyr,janitor
-Remotes: git::https://github.com/sboysel/fredr.git
+Depends: R (>= 4.0.0),censusapi,plyr,dplyr,tidyr,janitor,fredr
 NeedsCompilation: no
 Packaged: 2021-04-13 00:11:43 UTC; ruser
 Author: Shingai Samudzi [aut, cre]
