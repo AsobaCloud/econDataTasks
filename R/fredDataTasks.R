@@ -7,7 +7,7 @@
 #' 
 
 searchFred = function(key, search_df="results") {
-  fredr_set_key(Sys.getenv("FRED_KEY"))
+  fredr_set_key(Sys.getenv("FRED_API_KEY"))
   search_results2 = fredr_series_search_text(search_text = key)
   assign(paste(search_df), data.frame(search_results2), envir = .GlobalEnv)
   return(search_results2)
@@ -22,7 +22,7 @@ searchFred = function(key, search_df="results") {
 #' @export
 #'
 getFred = function(d_id, fred_df="fred_data") {
-  fredr_set_key(Sys.getenv("FRED_KEY"))
+  fredr_set_key(Sys.getenv("FRED_API_KEY"))
   df=fredr(series_id = d_id)
   assign(paste(fred_df), data.frame(df), envir = .GlobalEnv)
   return(df)
